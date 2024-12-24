@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CHRISTMAS LETTER | クリスマスレター</title>
+</head>
+<body>
+    <div class="container">
+        <img src="assets/1.png" alt="Christmas Letter page 1" class="image" id="image1">
+        <img src="assets/2.png" alt="Christmas Letter page 2" class="image" id="image2" style="display: none;">
+        <img src="assets/3.png" alt="Christmas Letter page 3" class="image" id="image3" style="display: none;">
+        <img src="assets/4.jpg" alt="Christmas Letter page 4" class="image" id="image4" style="display: none;">
+        <div id="image4" class="image">
+            <div id="santa-text" class="santa-text">メリークリスマス! Made by Santa Uri, Ho Ho Ho</div>
+        </div>
+        <!-- Left and right navigation buttons -->
+        <button class="left-btn" onclick="showPreviousImage()">
+            <span class="nav-text">Previous | 前へ <br><span class="arrow">&#8592;</span></span>
+        </button>
+        <button class="right-btn" onclick="showNextImage()">
+            <span class="nav-text">Next | 次へ <br><span class="arrow">&#8594;</span></span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

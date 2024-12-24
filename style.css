@@ -1,0 +1,127 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    background-color: #fdfdfd;
+    flex-direction: column;   /* Stack content vertically */
+}
+
+.container img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.left-btn, .right-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10vw; /* Make the buttons take up only 10% of the width */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    font-size: 18px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.left-btn {
+    left: 0; /* Position on the left side */
+}
+
+.right-btn {
+    right: 0; /* Position on the right side */
+}
+
+/* Santa Text Styling */
+.santa-text {
+    display: none; /* Hide the text initially */
+    position: absolute; /* Position it wherever you want on the image */
+    bottom: 10%; /* Example of positioning it at the bottom of the image */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text */
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional background for better readability */
+    padding: 10px;
+    max-width: 80%; /* Limit the width for readability */
+    text-align: center; /* Center the text */
+}
+
+/* Media query for tablets and smaller screens (up to 768px) */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        justify-content: center; /* Vertically center the content */
+        align-items: center;     /* Horizontally center the content */
+        height: 100vh; /* Ensure the container takes up the full screen height */
+    }
+
+    .left-btn, .right-btn {
+        position: relative; /* Change position to relative */
+        width: 40vw; /* Adjust button width for better mobile fit */
+        margin: 10px; /* Add some spacing between buttons */
+        top: unset; /* Remove top positioning */
+        transform: unset; /* Remove vertical centering */
+    }
+
+    .container img {
+        max-height: 60%; /* Adjust image size for smaller screens */
+        display: block; /* Ensure the image behaves properly */
+        width: auto; /* Ensure the width is auto so it scales correctly */
+    }
+
+    .santa-text {
+        font-size: 16px; /* Smaller text for smaller screens */
+        padding: 8px; /* Reduce padding on smaller screens */
+        max-width: 90%; /* Allow more space for text */
+        margin-top: 10px;
+        bottom: 35%; /* Ensure there is space between image and text */
+    }
+}
+
+/* Media query for mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    .container {
+        height: 100vh; /* Ensure the container takes up the full screen height */
+    }
+
+    .left-btn, .right-btn {
+        width: 50vw; /* Make buttons even larger on very small screens */
+        font-size: 16px; /* Adjust font size */
+        padding: 12px; /* Adjust padding */
+    }
+
+    .container img {
+        max-height: 50%; /* Further adjust the image size */
+        width: auto; /* Ensure the width is auto so it scales correctly */
+    }
+
+    .santa-text {
+        font-size: 14px; /* Even smaller text for very small screens */
+        padding: 6px; /* Reduce padding further */
+        max-width: 90%; /* Allow more space for text on very small screens */
+        margin-top: 10px; /* Ensure there is space between image and text */
+        bottom: 40%;
+    }
+}
+
+
+/* Disabled button state for previous/next buttons */
+.left-btn:disabled, .right-btn:disabled {
+    background-color: rgba(0, 0, 0, 0.2); /* Lighter background to indicate disabled state */
+    cursor: not-allowed; /* Change cursor to indicate non-clickable */
+}
